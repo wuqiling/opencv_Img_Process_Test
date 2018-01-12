@@ -150,7 +150,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Basic_Thresholding_Operations.cpp" />
+    <ClCompile Include="Eroding_and_Dilating.cpp" />
     <ClCompile Include="Hough_Line_Transform.cpp" />
+    <ClCompile Include="Sobel_Derivatives.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="config.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

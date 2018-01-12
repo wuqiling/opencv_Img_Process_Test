@@ -11,28 +11,32 @@ using namespace cv;
 /// Global variables
 
 int threshold_value = 0;
-int threshold_type = 3;;
+int threshold_type = 3;
+
 int const max_value = 255;
 int const max_type = 4;
 int const max_BINARY_value = 255;
 
 Mat src, src_gray, dst;
-char* window_name = "Threshold Demo";
+char *window_name = "Threshold Demo";
 
-char* trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted\n";
-char* trackbar_value = "Value";
+char *trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted\n";
+char *trackbar_value = "Value";
 
 /// Function headers
-void Threshold_Demo(int, void*);
+void Threshold_Demo(int, void *);
 
 /**
 * @function main
 */
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-	/// Load an image
-	// src = imread(argv[1], 1);
+/// Load an image
+#ifndef _WIN32
+	src = imread(argv[1], 1);
+#else
 	src = imread("F:/00Study/Master/CIS/Cash_registers/res/img/0000_WRGB_20131224083634.bmp", 1);
+#endif
 
 	/// Convert the image to Gray
 	cvtColor(src, src_gray, CV_BGR2GRAY);
@@ -42,12 +46,12 @@ int main(int argc, char** argv)
 
 	/// Create Trackbar to choose type of Threshold
 	createTrackbar(trackbar_type,
-		window_name, &threshold_type,
-		max_type, Threshold_Demo);
+				   window_name, &threshold_type,
+				   max_type, Threshold_Demo);
 
 	createTrackbar(trackbar_value,
-		window_name, &threshold_value,
-		max_value, Threshold_Demo);
+				   window_name, &threshold_value,
+				   max_value, Threshold_Demo);
 
 	/// Call the function to initialize
 	Threshold_Demo(0, 0);
@@ -62,14 +66,12 @@ int main(int argc, char** argv)
 			break;
 		}
 	}
-
 }
-
 
 /**
 * @function Threshold_Demo
 */
-void Threshold_Demo(int, void*)
+void Threshold_Demo(int, void *)
 {
 	/* 0: Binary
 	1: Binary Inverted

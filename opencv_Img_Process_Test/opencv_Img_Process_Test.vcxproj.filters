@@ -21,5 +21,16 @@
     <ClCompile Include="Basic_Thresholding_Operations.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Eroding_and_Dilating.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sobel_Derivatives.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

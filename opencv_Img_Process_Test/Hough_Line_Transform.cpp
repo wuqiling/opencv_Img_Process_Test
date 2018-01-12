@@ -20,8 +20,12 @@ void help()
 
 int main(int argc, char** argv)
 {
-	// const char* filename = argc >= 2 ? argv[1] : "pic1.jpg";
-	const char* filename ="F:/00Study/Master/CIS/Cash_registers/res/img/0000_WRGB_20131224083634.bmp";
+#ifdef _WIN32
+	const char* filename = "F:/00Study/Master/CIS/Cash_registers/res/img/0007_WIR_20131224132946.bmp";
+#else
+	const char* filename = argc >= 2 ? argv[1] : "pic1.jpg";
+#endif
+	
 
 	Mat src = imread(filename, 0);
 	if (src.empty())
